@@ -22,7 +22,7 @@ class LaunchScreenVC: UIViewController {
     }
     
     override func motionBegan(motion: UIEventSubtype, withEvent event: UIEvent?) {
-        print("seguing")
+        print("segueing")
         performSegueWithIdentifier("goToMain", sender: self)
     }
     /*
