@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--MainVC-->
@@ -22,6 +23,14 @@
             </objects>
             <point key="canvasLocation" x="922" y="162"/>
         </scene>
+        <!--testStoryboard-->
+        <scene sceneID="Yy7-oL-FfV">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Test" referencedIdentifier="testStoryboard" id="362-2N-fuQ" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GbQ-VM-gzc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="671" y="-255"/>
+        </scene>
         <!--Launch ScreenVC-->
         <scene sceneID="BAr-EI-krL">
             <objects>
@@ -34,29 +43,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Splash Screen.png" translatesAutoresizingMaskIntoConstraints="NO" id="APy-BA-azv">
-                                <rect key="frame" x="113" y="-34" width="375" height="667"/>
-                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BNU-mS-2e6">
+                                <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                <connections>
+                                    <segue destination="362-2N-fuQ" kind="show" identifier="goToMain" id="DcA-W8-4x0"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Shake To See News" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HbL-Ja-ibS">
-                                <rect key="frame" x="211" y="486" width="179" height="40"/>
+                                <rect key="frame" x="216" y="370" width="168" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" cocoaTouchSystemColor="darkTextColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BNU-mS-2e6">
-                                <rect key="frame" x="184" y="28" width="30" height="30"/>
-                                <connections>
-                                    <segue destination="8wt-v6-eaZ" kind="show" identifier="goToMain" id="A1p-K8-vWm"/>
-                                </connections>
-                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Splash Screen.png" translatesAutoresizingMaskIntoConstraints="NO" id="APy-BA-azv">
+                                <rect key="frame" x="113" y="-34" width="375" height="667"/>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.15686274509803921" green="0.54117647058823526" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.17647058823529413" green="0.54117647058823526" blue="0.59607843137254901" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="APy-BA-azv" firstAttribute="top" secondItem="HKZ-uF-ygv" secondAttribute="topMargin" constant="-34" id="4b7-dv-L7Z"/>
+                            <constraint firstItem="APy-BA-azv" firstAttribute="leading" secondItem="BNU-mS-2e6" secondAttribute="trailing" constant="83" id="7D6-sb-kLB"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="APy-BA-azv" secondAttribute="trailing" constant="92" id="TVz-md-ZPn"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7fv-ZO-pE7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="264" y="162"/>
+            <point key="canvasLocation" x="262" y="149"/>
         </scene>
     </scenes>
     <resources>
