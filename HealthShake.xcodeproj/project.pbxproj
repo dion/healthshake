@@ -12,6 +12,9 @@
 		1747758F1CC7ED1E00A1F6D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1747758E1CC7ED1E00A1F6D7 /* Assets.xcassets */; };
 		174775921CC7ED1E00A1F6D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 174775901CC7ED1E00A1F6D7 /* LaunchScreen.storyboard */; };
 		1747759C1CC7EDEA00A1F6D7 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1747759B1CC7EDEA00A1F6D7 /* MainVC.swift */; };
+		BC33E5761CC801A100D6CA5A /* LaunchScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC33E5751CC801A100D6CA5A /* LaunchScreenVC.swift */; };
+		BC33E5781CC805DC00D6CA5A /* splash-screen.png in Resources */ = {isa = PBXBuildFile; fileRef = BC33E5771CC805DC00D6CA5A /* splash-screen.png */; };
+		BC33E57A1CC80D2500D6CA5A /* Splash Screen.png in Resources */ = {isa = PBXBuildFile; fileRef = BC33E5791CC80D2500D6CA5A /* Splash Screen.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		174775911CC7ED1E00A1F6D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		174775931CC7ED1E00A1F6D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1747759B1CC7EDEA00A1F6D7 /* MainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
+		BC33E5751CC801A100D6CA5A /* LaunchScreenVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchScreenVC.swift; sourceTree = "<group>"; };
+		BC33E5771CC805DC00D6CA5A /* splash-screen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "splash-screen.png"; sourceTree = "<group>"; };
+		BC33E5791CC80D2500D6CA5A /* Splash Screen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Splash Screen.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,9 +63,12 @@
 				174775871CC7ED1E00A1F6D7 /* AppDelegate.swift */,
 				1747758B1CC7ED1E00A1F6D7 /* Main.storyboard */,
 				1747758E1CC7ED1E00A1F6D7 /* Assets.xcassets */,
+				BC33E5791CC80D2500D6CA5A /* Splash Screen.png */,
+				BC33E5771CC805DC00D6CA5A /* splash-screen.png */,
 				174775901CC7ED1E00A1F6D7 /* LaunchScreen.storyboard */,
 				174775931CC7ED1E00A1F6D7 /* Info.plist */,
 				1747759B1CC7EDEA00A1F6D7 /* MainVC.swift */,
+				BC33E5751CC801A100D6CA5A /* LaunchScreenVC.swift */,
 			);
 			path = HealthShake;
 			sourceTree = "<group>";
@@ -123,9 +132,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC33E57A1CC80D2500D6CA5A /* Splash Screen.png in Resources */,
 				174775921CC7ED1E00A1F6D7 /* LaunchScreen.storyboard in Resources */,
 				1747758F1CC7ED1E00A1F6D7 /* Assets.xcassets in Resources */,
 				1747758D1CC7ED1E00A1F6D7 /* Main.storyboard in Resources */,
+				BC33E5781CC805DC00D6CA5A /* splash-screen.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,6 +148,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				174775881CC7ED1E00A1F6D7 /* AppDelegate.swift in Sources */,
+				BC33E5761CC801A100D6CA5A /* LaunchScreenVC.swift in Sources */,
 				1747759C1CC7EDEA00A1F6D7 /* MainVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -255,6 +267,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = HealthShake/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.healthline.HealthShake;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -269,6 +282,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = HealthShake/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.healthline.HealthShake;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -295,6 +309,7 @@
 				174775981CC7ED1E00A1F6D7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
