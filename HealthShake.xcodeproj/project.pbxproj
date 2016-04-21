@@ -15,6 +15,8 @@
 		BC33E5761CC801A100D6CA5A /* LaunchScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC33E5751CC801A100D6CA5A /* LaunchScreenVC.swift */; };
 		BC33E5781CC805DC00D6CA5A /* splash-screen.png in Resources */ = {isa = PBXBuildFile; fileRef = BC33E5771CC805DC00D6CA5A /* splash-screen.png */; };
 		BC33E57A1CC80D2500D6CA5A /* Splash Screen.png in Resources */ = {isa = PBXBuildFile; fileRef = BC33E5791CC80D2500D6CA5A /* Splash Screen.png */; };
+		BC33E5A21CC9475F00D6CA5A /* Hearts Filled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = BC33E5A01CC9475F00D6CA5A /* Hearts Filled-50.png */; };
+		BC33E5A31CC9475F00D6CA5A /* Hearts-50.png in Resources */ = {isa = PBXBuildFile; fileRef = BC33E5A11CC9475F00D6CA5A /* Hearts-50.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		BC33E5751CC801A100D6CA5A /* LaunchScreenVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchScreenVC.swift; sourceTree = "<group>"; };
 		BC33E5771CC805DC00D6CA5A /* splash-screen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "splash-screen.png"; sourceTree = "<group>"; };
 		BC33E5791CC80D2500D6CA5A /* Splash Screen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Splash Screen.png"; sourceTree = "<group>"; };
+		BC33E5A01CC9475F00D6CA5A /* Hearts Filled-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Hearts Filled-50.png"; sourceTree = "<group>"; };
+		BC33E5A11CC9475F00D6CA5A /* Hearts-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Hearts-50.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,8 @@
 				174775871CC7ED1E00A1F6D7 /* AppDelegate.swift */,
 				1747758B1CC7ED1E00A1F6D7 /* Main.storyboard */,
 				1747758E1CC7ED1E00A1F6D7 /* Assets.xcassets */,
+				BC33E5A01CC9475F00D6CA5A /* Hearts Filled-50.png */,
+				BC33E5A11CC9475F00D6CA5A /* Hearts-50.png */,
 				BC33E5791CC80D2500D6CA5A /* Splash Screen.png */,
 				BC33E5771CC805DC00D6CA5A /* splash-screen.png */,
 				174775901CC7ED1E00A1F6D7 /* LaunchScreen.storyboard */,
@@ -134,8 +140,10 @@
 			files = (
 				BC33E57A1CC80D2500D6CA5A /* Splash Screen.png in Resources */,
 				174775921CC7ED1E00A1F6D7 /* LaunchScreen.storyboard in Resources */,
+				BC33E5A31CC9475F00D6CA5A /* Hearts-50.png in Resources */,
 				1747758F1CC7ED1E00A1F6D7 /* Assets.xcassets in Resources */,
 				1747758D1CC7ED1E00A1F6D7 /* Main.storyboard in Resources */,
+				BC33E5A21CC9475F00D6CA5A /* Hearts Filled-50.png in Resources */,
 				BC33E5781CC805DC00D6CA5A /* splash-screen.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

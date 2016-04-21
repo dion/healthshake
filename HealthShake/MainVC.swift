@@ -11,42 +11,37 @@ import UIKit
 class MainVC: UIViewController {
 
     @IBOutlet weak var webview: UIWebView!
+    @IBOutlet var navigationBar: UINavigationBar!
     
     func loadWebpage() {
         let randURL : String = getNewsURL()
         let url = NSURL(string: randURL)
         let request = NSURLRequest(URL: url!)
+        let newsTitles = NSUserDefaults.standardUserDefaults().objectForKey("healthlinePageTitles") as! NSDictionary
+
+        navigationBar.topItem!.title = newsTitles.objectForKey(randURL) as? String
         webview.loadRequest(request)
     }
-    
-    override func prefersStatusBarHidden() -> Bool {
+       override func prefersStatusBarHidden() -> Bool {
         return true
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Loading..."
         loadWebpage()
     }
     
     func getNewsURL() -> String {
-        
-        let newsUrls = [
-            "http://www.healthline.com/health-news/air-pollution-what-are-we-breathing-and-how-bad-is-it-for-us-102115",
-            "http://www.healthline.com/health-news/stanford-researchers-unveil-artificial-skin-that-can-feel-and-heal-101515",
-            "http://www.healthline.com/health-news/woman-who-blinded-herself-with-drain-cleaner-brings-attention-to-unusual-condition-100715",
-            "http://www.healthline.com/health-news/almost-everything-you-thought-you-knew-about-birth-order-is-wrong-101915",
-            "http://www.healthline.com/health-news/colorectal-cancer-striking-younger-people-more-often-100815",
-            "http://www.healthline.com/health-news/kids-more-likely-to-get-mental-healthcare-from-family-doctor-than-specialists-101215"
-        ]
-        
-        let random = Int(arc4random_uniform(UInt32(newsUrls.count)))
-        let randURL = newsUrls[random]
+        let newsUrls = NSUserDefaults.standardUserDefaults().objectForKey("healthlinePages")
+        let random = Int(arc4random_uniform(UInt32(newsUrls!.count)))
+        let randURL = newsUrls![random]
 
-        return randURL
+        return randURL as! String
     }
     
     override func motionBegan(motion: UIEventSubtype, withEvent event: UIEvent?) {
-            loadWebpage()
+        loadWebpage()
     }
 
     override func didReceiveMemoryWarning() {

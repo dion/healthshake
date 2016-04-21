@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="dHD-T4-qSW">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="dHD-T4-qSW">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -23,19 +23,19 @@
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
                             </webView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="67H-iq-awF">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="45"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                 <items>
-                                    <navigationItem title="Health Shake" id="iiw-hx-v1T"/>
+                                    <navigationItem title="Health Shake" id="iiw-hx-v1T">
+                                        <barButtonItem key="rightBarButtonItem" image="Hearts-50.png" id="mOe-S9-sPM"/>
+                                    </navigationItem>
                                 </items>
                             </navigationBar>
                         </subviews>
                         <constraints>
                             <constraint firstItem="1Dw-fs-zQt" firstAttribute="bottom" secondItem="vgy-Dl-Rf8" secondAttribute="top" id="C6p-Ko-IWi"/>
                             <constraint firstItem="1Dw-fs-zQt" firstAttribute="centerY" secondItem="bJf-tW-weA" secondAttribute="centerY" constant="22" id="X1X-XP-zkQ"/>
-                            <constraint firstItem="1Dw-fs-zQt" firstAttribute="top" secondItem="67H-iq-awF" secondAttribute="bottom" constant="1" id="Y7r-TV-emF"/>
                             <constraint firstAttribute="trailingMargin" secondItem="67H-iq-awF" secondAttribute="trailing" constant="-20" id="ZZR-nU-Gy0"/>
                             <constraint firstItem="1Dw-fs-zQt" firstAttribute="centerX" secondItem="bJf-tW-weA" secondAttribute="centerX" id="f6c-zU-kur"/>
-                            <constraint firstItem="1Dw-fs-zQt" firstAttribute="top" secondItem="67H-iq-awF" secondAttribute="bottom" id="hSp-O5-h3t"/>
                             <constraint firstItem="67H-iq-awF" firstAttribute="leading" secondItem="bJf-tW-weA" secondAttribute="leadingMargin" constant="-20" id="jnr-Az-4wF"/>
                             <constraint firstAttribute="trailing" secondItem="1Dw-fs-zQt" secondAttribute="trailing" id="s03-2b-1PA"/>
                             <constraint firstItem="67H-iq-awF" firstAttribute="top" secondItem="bJf-tW-weA" secondAttribute="topMargin" id="sYn-98-Vdu"/>
@@ -43,6 +43,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="navigationBar" destination="67H-iq-awF" id="bHg-hk-9tI"/>
                         <outlet property="webview" destination="1Dw-fs-zQt" id="eCU-1e-P09"/>
                     </connections>
                 </viewController>
@@ -65,8 +66,8 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Splash Screen.png" translatesAutoresizingMaskIntoConstraints="NO" id="APy-BA-azv">
                                 <rect key="frame" x="113" y="-34" width="375" height="667"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shake To See News" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HbL-Ja-ibS">
-                                <rect key="frame" x="217" y="494" width="167.5" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Shake To See News" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HbL-Ja-ibS">
+                                <rect key="frame" x="217" y="494" width="168" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -95,6 +96,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Hearts-50.png" width="50" height="50"/>
         <image name="Splash Screen.png" width="375" height="667"/>
     </resources>
 </document>
