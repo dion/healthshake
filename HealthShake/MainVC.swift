@@ -13,6 +13,7 @@ class MainVC: UIViewController, AVAudioPlayerDelegate {
 
     @IBOutlet weak var webview: UIWebView!
     @IBOutlet var navigationBar: UINavigationBar!
+    var audioPlayer = AVAudioPlayer()
     
     func loadWebpage() {
         let randURL : String = getNewsURL()
@@ -34,9 +35,9 @@ class MainVC: UIViewController, AVAudioPlayerDelegate {
     }
     
     func getNewsURL() -> String {
-        let newsUrls = NSUserDefaults.standardUserDefaults().objectForKey("healthlinePages")
-        let random = Int(arc4random_uniform(UInt32(newsUrls!.count)))
-        let randURL = newsUrls![random]
+        let newsUrls = NSUserDefaults.standardUserDefaults().objectForKey("healthlinePages") as! NSArray
+        let random = Int(arc4random_uniform(UInt32(newsUrls.count)))
+        let randURL = newsUrls[random]
 
         return randURL as! String
     }
@@ -80,6 +81,11 @@ class MainVC: UIViewController, AVAudioPlayerDelegate {
     }
     
     override func motionBegan(motion: UIEventSubtype, withEvent event: UIEvent?) {
+        do {
+            try playSound("Dice_Shake_Multiple_short2", fileExtension: "wav")
+        } catch {
+            return
+        }
         loadWebpage()
     }
 

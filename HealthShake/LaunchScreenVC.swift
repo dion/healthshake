@@ -9,8 +9,9 @@
 import UIKit
 import AVFoundation
 
+class LaunchScreenVC: UIViewController, AVAudioPlayerDelegate {
 
-class LaunchScreenVC: UIViewController {
+    var audioPlayer = AVAudioPlayer()
     
     func getApiData() {
         let urlList = NSMutableArray()

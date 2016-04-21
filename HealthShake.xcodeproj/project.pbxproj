@@ -144,6 +144,7 @@
 				BC33E57A1CC80D2500D6CA5A /* Splash Screen.png in Resources */,
 				174775921CC7ED1E00A1F6D7 /* LaunchScreen.storyboard in Resources */,
 				BC33E5A31CC9475F00D6CA5A /* Hearts-50.png in Resources */,
+				1747759E1CC84B2B00A1F6D7 /* Dice_Shake_Multiple_short2.wav in Resources */,
 				1747758F1CC7ED1E00A1F6D7 /* Assets.xcassets in Resources */,
 				1747758D1CC7ED1E00A1F6D7 /* Main.storyboard in Resources */,
 				BC33E5A21CC9475F00D6CA5A /* Hearts Filled-50.png in Resources */,
