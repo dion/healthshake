@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import AVFoundation
 
-class MainVC: UIViewController {
+class MainVC: UIViewController, AVAudioPlayerDelegate {
 
     @IBOutlet weak var webview: UIWebView!
+    var audioPlayer = AVAudioPlayer()
     
     func loadWebpage() {
         let randURL : String = getNewsURL()
@@ -36,6 +38,11 @@ class MainVC: UIViewController {
             "http://www.healthline.com/health-news/woman-who-blinded-herself-with-drain-cleaner-brings-attention-to-unusual-condition-100715",
             "http://www.healthline.com/health-news/almost-everything-you-thought-you-knew-about-birth-order-is-wrong-101915",
             "http://www.healthline.com/health-news/colorectal-cancer-striking-younger-people-more-often-100815",
+            "http://www.healthline.com/health-news/kids-more-likely-to-get-mental-healthcare-from-family-doctor-than-specialists-101215",
+            "http://www.healthline.com/health-news/screen-time-hurts-more-than-kids-eyes-101215",
+            "http://www.healthline.com/health-news/dengue-outbreaks-increase-with-climate-change-101215",
+            "http://www.healthline.com/health-news/tougher-alcohol-policies-lead-to-fewer-cirrhosis-deaths-101515",
+            "http://www.healthline.com/health-news/wide-range-of-pesticides-contribute-to-dwindling-bee-population-101315",
             "http://www.healthline.com/health-news/kids-more-likely-to-get-mental-healthcare-from-family-doctor-than-specialists-101215"
         ]
         
@@ -45,8 +52,51 @@ class MainVC: UIViewController {
         return randURL
     }
     
+    func playSound(fileName: String, fileExtension: String) throws {
+        
+        let dispatchQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
+        
+        dispatch_async(dispatchQueue, { let mainBundle = NSBundle.mainBundle()
+            
+            let filePath = mainBundle.pathForResource("\(fileName)", ofType:"\(fileExtension)")
+            
+            if let path = filePath{
+                let fileData = NSData(contentsOfFile: path)
+                
+                do {
+                    /* Start the audio player */
+                    self.audioPlayer = try AVAudioPlayer(data: fileData!)
+                    
+                    guard let player : AVAudioPlayer? = self.audioPlayer else {
+                        return
+                    }
+                    
+                    /* Set the delegate and start playing */
+                    player!.delegate = self
+                    if player!.prepareToPlay() && player!.play() {
+                        /* Successfully started playing */
+                    } else {
+                        /* Failed to play */
+                    }
+                    
+                } catch {
+                    //self.audioPlayer = nil
+                    return
+                }
+                
+            }
+            
+        })
+        
+    }
+    
     override func motionBegan(motion: UIEventSubtype, withEvent event: UIEvent?) {
-            loadWebpage()
+        do {
+            try playSound("Dice_Shake_Multiple_short2", fileExtension: "wav")
+        } catch {
+            return
+        }
+        loadWebpage()
     }
 
     override func didReceiveMemoryWarning() {

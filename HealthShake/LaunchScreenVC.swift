@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import AVFoundation
 
-class LaunchScreenVC: UIViewController {
+class LaunchScreenVC: UIViewController, AVAudioPlayerDelegate {
 
+    var audioPlayer = AVAudioPlayer()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,17 +25,51 @@ class LaunchScreenVC: UIViewController {
     }
     
     override func motionBegan(motion: UIEventSubtype, withEvent event: UIEvent?) {
+        do {
+            try playSound("Dice_Shake_Multiple_short2", fileExtension: "wav")
+        } catch {
+            return
+        }
         print("segueing")
         performSegueWithIdentifier("goToMain", sender: self)
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    func playSound(fileName: String, fileExtension: String) throws {
+        
+        let dispatchQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
+        
+        dispatch_async(dispatchQueue, { let mainBundle = NSBundle.mainBundle()
+            
+            let filePath = mainBundle.pathForResource("\(fileName)", ofType:"\(fileExtension)")
+            
+            if let path = filePath{
+                let fileData = NSData(contentsOfFile: path)
+                
+                do {
+                    /* Start the audio player */
+                    self.audioPlayer = try AVAudioPlayer(data: fileData!)
+                    
+                    guard let player : AVAudioPlayer? = self.audioPlayer else {
+                        return
+                    }
+                    
+                    /* Set the delegate and start playing */
+                    player!.delegate = self
+                    if player!.prepareToPlay() && player!.play() {
+                        /* Successfully started playing */
+                    } else {
+                        /* Failed to play */
+                    }
+                    
+                } catch {
+                    //self.audioPlayer = nil
+                    return
+                }
+                
+            }
+            
+        })
+        
     }
-    */
 
 }
